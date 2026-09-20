@@ -1,5 +1,26 @@
 <img width="1920" height="1080" alt="preview_thumb" src="https://github.com/user-attachments/assets/58147806-bd64-4fbb-9d19-5ce72457770d" />
 
+# Ultra Lobster Hind Siliguri
+
+这是基于 [Ultra Lobster](https://github.com/7368697661/Ultra-Lobster) 的独立衍生版。
+
+本版本的修改包括：
+
+- 所有可见文本统一使用 Hind Siliguri；
+- 文件标题缩小约 20%；
+- H1–H6 调整为 1.6em、1.35em、1.2em、1.1em、1em、0.95em；
+- 保留 Ultra Lobster 原有的颜色、布局、玻璃拟态、动画和 Style Settings 选项。
+
+安装和更新请查看 [INSTALL_FOR_FRIENDS.md](INSTALL_FOR_FRIENDS.md)，字体与许可证请查看 [FONTS.md](FONTS.md)。
+
+## 来源和许可证
+
+本项目保留上游 Ultra Lobster 的 MIT License、原作者和来源信息，未暗示上游作者认可或维护本衍生版。原始许可证见 [LICENSE](LICENSE)。
+
+本仓库同时包含 Hind Siliguri 字体文件，其许可证见 [fonts/OFL.txt](fonts/OFL.txt)。
+
+本项目目前是 GitHub 公开仓库版本，不代表已经提交到 Obsidian Community Directory。
+
 # hi
 this is ultra lobster.. idk what this theme is anymore 😭
 

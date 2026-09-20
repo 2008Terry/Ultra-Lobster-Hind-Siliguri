@@ -1,0 +1,15 @@
+# Bundled fonts
+
+This derivative bundles Hind Siliguri under the SIL Open Font License, Version 1.1.
+
+Included weights:
+
+- `HindSiliguri-Light.ttf` — weight 300
+- `HindSiliguri-Regular.ttf` — weight 400
+- `HindSiliguri-Medium.ttf` — weight 500
+- `HindSiliguri-SemiBold.ttf` — weight 600
+- `HindSiliguri-Bold.ttf` — weight 700
+
+The complete license text is included in [`fonts/OFL.txt`](fonts/OFL.txt). The font files are bundled so the theme can render consistently on computers that do not already have Hind Siliguri installed.
+
+The theme's original MIT license remains in [`LICENSE`](LICENSE). The font license and the theme license are separate and should both be retained when redistributing this theme.
