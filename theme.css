@@ -9228,6 +9228,183 @@ body.theme-light.ulu-adaptive-lt
         0 1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.08) !important;
 }
 
+/*
+ * interaction-safe quote cards
+ *
+ * CodeMirror measures .cm-line elements, but not their vertical margins.
+ * The quote card used those margins for decoration, so the visual card could
+ * cover the line map below it. Keep the same geometry and shadows on a
+ * pointer-transparent pseudo-element, while leaving the measured line box
+ * free of vertical margins and borders.
+ */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
+    --ulu-quote-bg: rgb(from var(--color-base-00) r g b/0.3);
+    --ulu-quote-shadow-side:
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.15),
+        1px 0 0 0 rgb(from var(--color-base-00) r g b/0.1);
+    --ulu-quote-shadow-top:
+        0 -8px 24px -6px rgb(from var(--mono-rgb-100) r g b/0.05),
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.15),
+        0 -1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.15),
+        1px 0 0 0 rgb(from var(--color-base-00) r g b/0.1);
+    --ulu-quote-shadow-bottom:
+        0 8px 24px -6px rgb(from var(--mono-rgb-100) r g b/0.05),
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.15),
+        1px 0 0 0 rgb(from var(--color-base-00) r g b/0.1),
+        0 1px 0 0 rgb(from var(--color-base-00) r g b/0.1);
+    --ulu-quote-shadow-single:
+        0 8px 24px -6px rgb(from var(--mono-rgb-100) r g b/0.05),
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.15),
+        0 -1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.15),
+        1px 0 0 0 rgb(from var(--color-base-00) r g b/0.1),
+        0 1px 0 0 rgb(from var(--color-base-00) r g b/0.1);
+
+    position: relative !important;
+    isolation: isolate;
+    z-index: 0;
+    overflow: visible !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 40px !important;
+    box-shadow: none !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    left: 20px;
+    display: block !important;
+    background-color: var(--ulu-quote-bg);
+    border-radius: 0;
+    box-shadow: var(--ulu-quote-shadow-side);
+    pointer-events: none;
+}
+
+.markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote:not(
+        .cm-line.HyperMD-quote + .cm-line.HyperMD-quote
+    )::before {
+    top: 16px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: var(--ulu-quote-shadow-top);
+}
+
+.markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote:not(
+        .cm-line.HyperMD-quote + .cm-line.HyperMD-quote
+    ) {
+    padding-top: 32px !important;
+}
+
+.markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote:not(:has(+ .cm-line.HyperMD-quote))::before {
+    bottom: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: var(--ulu-quote-shadow-bottom);
+}
+
+.markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote:not(:has(+ .cm-line.HyperMD-quote)) {
+    padding-bottom: 32px !important;
+}
+
+.markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote:not(
+        .cm-line.HyperMD-quote + .cm-line.HyperMD-quote
+    ):not(:has(+ .cm-line.HyperMD-quote))::before {
+    top: 16px;
+    bottom: 16px;
+    border-radius: var(--ulu-r-xl);
+    box-shadow: var(--ulu-quote-shadow-single);
+}
+
+.markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote:not(
+        .cm-line.HyperMD-quote + .cm-line.HyperMD-quote
+    ):not(:has(+ .cm-line.HyperMD-quote)) {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
+    --ulu-quote-shadow-side:
+        -1px 0 0 0 rgb(from var(--mono-rgb-0) r g b/0.6),
+        1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.1);
+    --ulu-quote-shadow-top:
+        0 -8px 24px -6px rgb(from var(--mono-rgb-100) r g b/0.05),
+        -1px 0 0 0 rgb(from var(--mono-rgb-0) r g b/0.6),
+        0 -1px 0 0 rgb(from var(--mono-rgb-0) r g b/0.6),
+        1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.1);
+    --ulu-quote-shadow-bottom:
+        0 8px 24px -6px rgb(from var(--mono-rgb-100) r g b/0.05),
+        -1px 0 0 0 rgb(from var(--mono-rgb-0) r g b/0.6),
+        1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.1),
+        0 1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.1);
+    --ulu-quote-shadow-single:
+        0 8px 24px -6px rgb(from var(--mono-rgb-100) r g b/0.05),
+        -1px 0 0 0 rgb(from var(--mono-rgb-0) r g b/0.6),
+        0 -1px 0 0 rgb(from var(--mono-rgb-0) r g b/0.6),
+        1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.1),
+        0 1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.1);
+}
+
+body.theme-light.ulu-adaptive-lt
+    .markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote {
+    --ulu-quote-bg: rgb(from var(--color-base-25) r g b/0.55);
+    --ulu-quote-shadow-side:
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.65),
+        1px 0 0 0 rgb(from var(--mono-rgb-0) r g b/0.08);
+    --ulu-quote-shadow-top:
+        0 -8px 24px -6px rgb(from var(--mono-rgb-0) r g b/0.05),
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.65),
+        0 -1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.65),
+        1px 0 0 0 rgb(from var(--mono-rgb-0) r g b/0.08);
+    --ulu-quote-shadow-bottom:
+        0 8px 24px -6px rgb(from var(--mono-rgb-0) r g b/0.08),
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.65),
+        1px 0 0 0 rgb(from var(--mono-rgb-0) r g b/0.08),
+        0 1px 0 0 rgb(from var(--mono-rgb-0) r g b/0.08);
+    --ulu-quote-shadow-single:
+        0 8px 24px -6px rgb(from var(--mono-rgb-0) r g b/0.08),
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.65),
+        0 -1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.65),
+        1px 0 0 0 rgb(from var(--mono-rgb-0) r g b/0.08),
+        0 1px 0 0 rgb(from var(--mono-rgb-0) r g b/0.08);
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
+    --ulu-quote-bg: rgb(from var(--mono-rgb-100) r g b/0.04);
+    --ulu-quote-shadow-side:
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.1),
+        1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.06);
+    --ulu-quote-shadow-top:
+        0 -8px 24px -6px rgb(from var(--mono-rgb-0) r g b/0.12),
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.1),
+        0 -1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.1),
+        1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.06);
+    --ulu-quote-shadow-bottom:
+        0 8px 24px -6px rgb(from var(--mono-rgb-0) r g b/0.25),
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.1),
+        1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.06),
+        0 1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.08);
+    --ulu-quote-shadow-single:
+        0 8px 24px -6px rgb(from var(--mono-rgb-0) r g b/0.25),
+        -1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.1),
+        0 -1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.1),
+        1px 0 0 0 rgb(from var(--mono-rgb-100) r g b/0.06),
+        0 1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.08);
+}
+
 /* .𖥔 ݁ ˖  list indent guides — source / live preview ⊹ ࣪ ˖
    obsidian precomputes --indentation-guide-source-indent per level on .cm-indent::before.
    +4px on normal list lines; task lines use -4px to offset icon width vs bullets.
