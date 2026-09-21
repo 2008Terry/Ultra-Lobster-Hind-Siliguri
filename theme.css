@@ -9263,6 +9263,7 @@ body.theme-light.ulu-adaptive-lt
     isolation: isolate;
     z-index: 0;
     overflow: visible !important;
+    background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
     border: 0 !important;
