@@ -9273,7 +9273,7 @@ body.theme-light.ulu-adaptive-lt
     box-shadow: none !important;
 }
 
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote::before {
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -9291,7 +9291,7 @@ body.theme-light.ulu-adaptive-lt
 .markdown-source-view.mod-cm6
     .cm-line.HyperMD-quote:not(
         .cm-line.HyperMD-quote + .cm-line.HyperMD-quote
-    )::before {
+    )::after {
     top: 16px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -9306,7 +9306,7 @@ body.theme-light.ulu-adaptive-lt
 }
 
 .markdown-source-view.mod-cm6
-    .cm-line.HyperMD-quote:not(:has(+ .cm-line.HyperMD-quote))::before {
+    .cm-line.HyperMD-quote:not(:has(+ .cm-line.HyperMD-quote))::after {
     bottom: 16px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
@@ -9321,7 +9321,7 @@ body.theme-light.ulu-adaptive-lt
 .markdown-source-view.mod-cm6
     .cm-line.HyperMD-quote:not(
         .cm-line.HyperMD-quote + .cm-line.HyperMD-quote
-    ):not(:has(+ .cm-line.HyperMD-quote))::before {
+    ):not(:has(+ .cm-line.HyperMD-quote))::after {
     top: 16px;
     bottom: 16px;
     border-radius: var(--ulu-r-xl);
