@@ -9465,12 +9465,13 @@ body:is(.theme-light, .theme-dark, .ulu-adaptive-lt)
     box-shadow: none !important;
 }
 
-/* Keep Live Preview quote text inset from the card edge. */
+/* Keep Live Preview quote content inset from the card edge. */
 body:is(.theme-light, .theme-dark, .ulu-adaptive-lt)
     .app-container
     .markdown-source-view.mod-cm6.is-live-preview
-    .cm-line.HyperMD-quote {
-    padding-left: 60px !important;
+    .cm-line.HyperMD-quote
+    .cm-quote:not(.cm-formatting-quote) {
+    margin-left: 40px !important;
 }
 
 /* .𖥔 ݁ ˖  list indent guides — source / live preview ⊹ ࣪ ˖
