@@ -9278,9 +9278,9 @@ body.theme-light.ulu-adaptive-lt
     position: absolute;
     z-index: -1;
     top: 0;
-    right: 20px;
+    right: 0;
     bottom: 0;
-    left: 20px;
+    left: 0;
     display: block !important;
     background-color: var(--ulu-quote-bg);
     border-radius: 0;
