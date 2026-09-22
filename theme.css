@@ -9406,6 +9406,65 @@ body.theme-light.ulu-adaptive-lt
         0 1px 0 0 rgb(from var(--mono-rgb-100) r g b/0.08);
 }
 
+/*
+ * The original edge-line selectors are more specific than the shared reset
+ * above. Repeat only the layout reset at higher specificity so their old
+ * margins, borders, and line shadows cannot survive beside the card layer.
+ */
+body:is(.theme-light, .theme-dark, .ulu-adaptive-lt)
+    .app-container
+    .markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 40px !important;
+    box-shadow: none !important;
+}
+
+body:is(.theme-light, .theme-dark, .ulu-adaptive-lt)
+    .app-container
+    .markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote:not(
+        .cm-line.HyperMD-quote + .cm-line.HyperMD-quote
+    ) {
+    margin-top: 0 !important;
+    border-top: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    padding-top: 32px !important;
+    box-shadow: none !important;
+}
+
+body:is(.theme-light, .theme-dark, .ulu-adaptive-lt)
+    .app-container
+    .markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote:not(:has(+ .cm-line.HyperMD-quote)) {
+    margin-bottom: 0 !important;
+    border-bottom: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    padding-bottom: 32px !important;
+    box-shadow: none !important;
+}
+
+body:is(.theme-light, .theme-dark, .ulu-adaptive-lt)
+    .app-container
+    .markdown-source-view.mod-cm6
+    .cm-line.HyperMD-quote:not(
+        .cm-line.HyperMD-quote + .cm-line.HyperMD-quote
+    ):not(:has(+ .cm-line.HyperMD-quote)) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 0 !important;
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+    box-shadow: none !important;
+}
+
 /* .𖥔 ݁ ˖  list indent guides — source / live preview ⊹ ࣪ ˖
    obsidian precomputes --indentation-guide-source-indent per level on .cm-indent::before.
    +4px on normal list lines; task lines use -4px to offset icon width vs bullets.
