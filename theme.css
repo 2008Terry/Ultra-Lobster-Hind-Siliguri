@@ -20312,6 +20312,16 @@ span.dataview.inline-field {
     color: var(--text-normal);
 }
 
+/* Preserve the arrow ligature in task text in both editor and reading view. */
+body:not(.ulu-disable-ligatures) .markdown-preview-view li.task-list-item,
+body:not(.ulu-disable-ligatures) .markdown-preview-view li.task-list-item *,
+body:not(.ulu-disable-ligatures) .markdown-preview-view .tasks-list-text,
+body:not(.ulu-disable-ligatures) .markdown-preview-view .task-description,
+body:not(.ulu-disable-ligatures) .markdown-source-view.mod-cm6 .cm-line.HyperMD-task-line,
+body:not(.ulu-disable-ligatures) .markdown-source-view.mod-cm6 .cm-line.HyperMD-task-line * {
+    font-variant-ligatures: common-ligatures contextual !important;
+}
+
 .task-extras {
     color: var(--text-muted);
     font-size: var(--font-ui-smaller);
